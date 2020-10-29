@@ -1,7 +1,5 @@
 package net.ipip.ipdb;
 
-import com.alibaba.fastjson.JSONObject;
-
 import java.util.Map;
 
 public class CityInfo {
@@ -237,7 +235,8 @@ public class CityInfo {
             if (str == null) {
                 return null;
             }
-            Map<String,String> info = JSONObject.parseObject(str, Map.class);
+
+            Map<String, String> info = JsonUtils.readValue(str, Map.class);
 
             String[] data = new String[8];
             data[0] = this.getCountryName();
@@ -261,8 +260,7 @@ public class CityInfo {
             if (str == null) {
                 return null;
             }
-
-            return JSONObject.parseObject(str, AsnInfo[].class);
+            return JsonUtils.readValue(str, AsnInfo[].class);
         }
 
         return null;

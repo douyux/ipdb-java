@@ -3,6 +3,7 @@ package net.ipip.ipdb;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -16,7 +17,8 @@ public class CityTest {
 
     static {
         try {
-            cityDb = new City("c:/work/ipdb/ipapi.ipdb");
+            InputStream input = CityTest.class.getClassLoader().getResourceAsStream("ipipfree.ipdb");
+            cityDb = new City(input);
         } catch (Exception ex) {
             ex.printStackTrace();
         }

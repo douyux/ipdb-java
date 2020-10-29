@@ -1,20 +1,20 @@
 package net.ipip.ipdb;
 
-import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class AsnInfo {
 
     public int ASN;
 
-    @JSONField(name = "reg")
+    @JsonProperty("reg")
     public String Registry;
 
-    @JSONField(name = "cc")
+    @JsonProperty("cc")
     public String Country;
 
-    @JSONField(name = "net")
+    @JsonProperty("net")
     public String NetName;
 
-    @JSONField(name = "org")
+    @JsonProperty("org")
     public String OrgName;
 }

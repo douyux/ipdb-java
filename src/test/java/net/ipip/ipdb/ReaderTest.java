@@ -9,7 +9,7 @@ public class ReaderTest {
     @Test
     public void testReader() {
         try {
-            IDC db = new IDC("c:/work/ipdb/idc_list.ipdb");
+            IDC db = new IDC(CityTest.class.getClassLoader().getResourceAsStream("ipipfree.ipdb"));
             System.out.println(db.buildTime());
             System.out.println(db.languages());
             System.out.println(db.fields());

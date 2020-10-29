@@ -8,7 +8,7 @@ public class BaseStationTest {
     @Test
     public void testBaseStation() {
         try {
-            BaseStation db = new BaseStation("c:/work/ipdb/base_station.ipdb");
+            BaseStation db = new BaseStation(CityTest.class.getClassLoader().getResourceAsStream("ipipfree.ipdb"));
             System.out.println(db.buildTime());
             System.out.println(db.languages());
             System.out.println(db.fields());

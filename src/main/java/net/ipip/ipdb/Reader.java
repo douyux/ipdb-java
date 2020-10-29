@@ -1,6 +1,5 @@
 package net.ipip.ipdb;
 
-import com.alibaba.fastjson.JSONObject;
 import sun.net.util.IPAddressUtil;
 
 import java.io.*;
@@ -50,7 +49,7 @@ public class Reader {
 
         byte[] metaBytes = Arrays.copyOfRange(this.data, 4, Long.valueOf(metaLength).intValue() + 4);
 
-        MetaData meta = JSONObject.parseObject(new String(metaBytes), MetaData.class);
+        MetaData meta = JsonUtils.readValue(metaBytes, MetaData.class);
         this.nodeCount = meta.nodeCount;
         this.meta = meta;
 

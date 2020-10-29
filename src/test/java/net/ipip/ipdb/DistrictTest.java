@@ -10,7 +10,7 @@ public class DistrictTest {
     public void testDistrict() {
 
         try {
-            District db = new District("c:/tiantexin/download/china_district.ipdb");
+            District db = new District(CityTest.class.getClassLoader().getResourceAsStream("ipipfree.ipdb"));
             System.out.println(db.buildTime());
             System.out.println(db.languages());
             System.out.println(db.fields());
